@@ -68,10 +68,10 @@ let checkAnniversary = function () {
  // let dateInsideFunction = new Date(2021, 11, 25, 59, 59, 59, 2000)
  // let dateInsideFunction = new Date(2023, 9, 16, 4, 52, 59, 1000)
  // let dateInsideFunction = new Date(2041, 9, 16, 4, 52, 59, 1001)
- // let dateInsideFunction = new Date(2020, 11, 31, 59, 59, 59, 999)
+ // let dateInsideFunction = new Date(2021, 11, 25, 0, 0, 0, 1000)
  // let dateInsideFunction = new Date(2022, 11, 1, 0, 0, 0, 0)
  // let dateInsideFunction = new Date(2025, 11, 31, 23, 59, 59, 1000)
- 
+
 
  let seconsFormated = dateInsideFunction.getSeconds() > 9 ? dateInsideFunction.getSeconds() : `0${dateInsideFunction.getSeconds()}`
 
@@ -81,7 +81,7 @@ let checkAnniversary = function () {
 
  let dayFormated = dateInsideFunction.getDate() > 9 ? dateInsideFunction.getDate() : `0${dateInsideFunction.getDate()}`
 
- let monthFormated = dateInsideFunction.getMonth() >= 9 ? `${dateInsideFunction.getMonth()+1}` : `0${dateInsideFunction.getMonth()+1}`
+ let monthFormated = dateInsideFunction.getMonth() >= 9 ? `${dateInsideFunction.getMonth() + 1}` : `0${dateInsideFunction.getMonth() + 1}`
 
  showTimeDOOM.textContent = `Actual date: ${dateInsideFunction.getFullYear()}/${monthFormated}/${dayFormated} - ${theDays[dateInsideFunction.getDay()]} ${hoursFormated}:${minutesFormated}:${seconsFormated}`
 
@@ -314,6 +314,7 @@ const howManyAnniversariesSetInterval = setInterval(checkAnniversary, 1000)
 
 let yearAndDayOfAnniversaries = []
 let anniversariesDays = new Date(myMotherIsEternalOriginal.getTime())
+anniversariesDays.setFullYear(anniversariesDays.getFullYear() + 1)
 // console.log('anniversariesDays:', anniversariesDays)
 
 for (let x = anniversariesDays.getFullYear();x <= 2100;x++) {
